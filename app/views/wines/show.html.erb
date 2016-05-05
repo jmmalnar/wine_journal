@@ -1,0 +1,59 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @wine.name %>
+</p>
+
+<p>
+  <strong>Vintage:</strong>
+  <%= @wine.vintage %>
+</p>
+
+<p>
+  <strong>Grapes:</strong>
+  <%= @wine.grapes %>
+</p>
+
+<p>
+  <strong>Color:</strong>
+  <%= @wine.color %>
+</p>
+
+<p>
+  <strong>Country:</strong>
+  <%= @wine.country %>
+</p>
+
+<p>
+  <strong>Region:</strong>
+  <%= @wine.region %>
+</p>
+
+<p>
+  <strong>Abv:</strong>
+  <%= @wine.abv %>
+</p>
+
+<p>
+  <strong>Vineyard:</strong>
+  <%= @wine.vineyard %>
+</p>
+
+<p>
+  <strong>Price:</strong>
+  <%= @wine.price %>
+</p>
+
+<p>
+  <strong>Date drank:</strong>
+  <%= @wine.date_drank %>
+</p>
+
+<p>
+  <strong>Notes:</strong>
+  <%= @wine.notes %>
+</p>
+
+<%= link_to 'Edit', edit_wine_path(@wine) %> |
+<%= link_to 'Back', wines_path %>
