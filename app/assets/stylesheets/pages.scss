@@ -1,3 +1,46 @@
-// Place all the styles related to the pages controller here.
-// They will automatically be included in application.css.scss.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+/* FRONT PAGE STYLING */
+
+#index_body{
+  background-image: url('background.png');
+  background-size: 100%;
+  height: 100%;
+}
+
+.main_content {
+  color: #FEFEF6;
+  text-align: center;
+  font-family: 'Josefin Slab', serif;
+}
+
+.main_content h1 {
+  font-size: 10em;
+}
+
+/* INDEX PAGE LOWER BUTTON TILES */
+
+.glyphicon {
+  font-size: 100px;
+  color: #FEFEF6;
+}
+
+#index_body a {
+  color: #FEFEF6;
+  text-decoration: none;
+}
+
+#my_list_tile, #add_wine_tile {
+  height: 200px;
+  width: 100%;
+  padding-top: 20px;
+  margin-bottom: 15px;
+  position: relative;
+  /* border: 5px solid #FEFEF6;
+  border-radius: 10px; */
+  overflow: hidden;
+  font-size: 24px;
+}
+
+#my_list_tile:hover, #add_wine_tile:hover {
+  border: 5px solid #FEFEF6;
+  border-radius: 10px;
+}
