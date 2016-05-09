@@ -47,12 +47,13 @@ body {
   padding-top: 20px;
   margin-bottom: 15px;
   position: relative;
-  border: 5px solid #FEFEF6;
-  border-radius: 10px;
+  /* border: 5px solid #FEFEF6;
+  border-radius: 10px; */
   overflow: hidden;
   font-size: 24px;
 }
 
 #my_list_tile:hover, #add_wine_tile:hover {
-  box-shadow: 0 1px 5px 1px #cccccc;
+  border: 5px solid #FEFEF6;
+  border-radius: 10px;
 }
