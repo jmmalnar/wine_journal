@@ -1,7 +1,7 @@
 <%= form_for(@wine) do |f| %>
   <% if @wine.errors.any? %>
     <div id="error_explanation">
-      <h2><%= pluralize(@wine.errors.count, "error") %> prohibited this wine from being saved:</h2>
+      <h2><%= pluralize(@wine.errors.count, 'error') %> prohibited this wine from being saved:</h2>
 
       <ul>
       <% @wine.errors.full_messages.each do |message| %>
@@ -11,51 +11,78 @@
     </div>
   <% end %>
 
-  <div class="field">
-    <%= f.label :name %><br>
-    <%= f.text_field :name %>
+
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-6 col-md-6 col-sm-12">
+        <div class="form_boxes">
+          <div class="field">
+            <%= f.label :rating %><br>
+            <%= f.text_field :rating, :class => 'form_field' %>
+          </div>
+          <div class="field">
+            <%= f.label :name %><br>
+            <%= f.text_field :name, :class => 'form_field' %>
+          </div>
+          <div class="field">
+            <%= f.label :vineyard %><br>
+            <%= f.text_field :vineyard, :class => 'form_field' %>
+          </div>
+          <div class="field">
+            <%= f.label :vintage %><br>
+            <%= f.number_field :vintage, :class => 'form_field' %>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-6 col-md-6 col-sm-12">
+        <div class="form_boxes">
+          <div class="field">
+            <%= f.label :color %><br>
+            <%= f.text_field :color, :class => 'form_field' %>
+          </div>
+          <div class="field">
+            <%= f.label :grapes %><br>
+            <%= f.text_field :grapes, :class => 'form_field' %>
+          </div>
+          <div class="field">
+            <%= f.label :country %><br>
+            <%= f.text_field :country, :class => 'form_field' %>
+          </div>
+          <div class="field">
+            <%= f.label :region %><br>
+            <%= f.text_field :region, :class => 'form_field' %>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-lg-12 col-md-12 col-sm-12">
+        <div class="form_boxes">
+          <div class="field">
+            <%= f.label :abv, style: 'text-transform: uppercase;' %><br>
+            <%= f.text_field :abv, :class => 'form_field' %>
+          </div>
+          <div class="field">
+            <%= f.label :price %><br>
+            <%= f.text_field :price, :class => 'form_field' %>
+          </div>
+          <div class="field">
+            <%= f.label :date_drank %><br>
+            <%= f.date_field :date_drank, :class => 'date_field' %>
+          </div>
+          <div class="field">
+            <%= f.label :notes %><br>
+            <%= f.text_area :notes, :class => 'text_area' %>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
-  <div class="field">
-    <%= f.label :vintage %><br>
-    <%= f.number_field :vintage %>
-  </div>
-  <div class="field">
-    <%= f.label :grapes %><br>
-    <%= f.text_field :grapes %>
-  </div>
-  <div class="field">
-    <%= f.label :color %><br>
-    <%= f.text_field :color %>
-  </div>
-  <div class="field">
-    <%= f.label :country %><br>
-    <%= f.text_field :country %>
-  </div>
-  <div class="field">
-    <%= f.label :region %><br>
-    <%= f.text_field :region %>
-  </div>
-  <div class="field">
-    <%= f.label :abv %><br>
-    <%= f.text_field :abv %>
-  </div>
-  <div class="field">
-    <%= f.label :vineyard %><br>
-    <%= f.text_field :vineyard %>
-  </div>
-  <div class="field">
-    <%= f.label :price %><br>
-    <%= f.text_field :price %>
-  </div>
-  <div class="field">
-    <%= f.label :date_drank %><br>
-    <%= f.date_select :date_drank %>
-  </div>
-  <div class="field">
-    <%= f.label :notes %><br>
-    <%= f.text_area :notes %>
-  </div>
-  <div class="actions">
-    <%= f.submit %>
-  </div>
+
+    <div class="container">
+      <div class="actions">
+        <%= f.submit :Submit, class: 'submit_button' %>
+      </div>
+    </div>
 <% end %>

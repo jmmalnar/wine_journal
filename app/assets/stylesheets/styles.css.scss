@@ -15,4 +15,53 @@
 
 body {
   background: #3A364F;
+  color: #FEFEF6;
+  font-family: 'Josefin Slab', serif;
+  font-size: 1.5em;
+}
+
+h1 {
+  font-size: 5em;
+  text-align: center;
+}
+
+/* FORMS */
+.form_boxes {
+  border: 3px solid #FEFEF6;
+  border-radius: 5px;
+  padding: 20px;
+  margin-top: 10px;
+}
+
+.form_field, .date_field {
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  color: black;
+  width: 75%;
+  border: 0;
+  border-radius: 5px;
+  height: 2em;
+  box-shadow: inset 0px 0px 20px 0px rgba(0,0,0,0.6);
+  padding-left: 5px;
+}
+
+.form_field:hover {
+  box-shadow: inset 0px 0px 20px 0px rgba(0,0,0,0.3);
+}
+
+.text_area {
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  color: black;
+  width: 100%;
+  border: 0;
+  border-radius: 5px;
+  box-shadow: inset 0px 0px 20px 0px rgba(0,0,0,0.6);
+}
+
+.submit_button {
+  color: #3A364F;
+  font-size: 2em;
+  font-weight: 800;
+  border-radius: 5px;
+  padding: 10px;
+  margin-top: 10px;
 }
