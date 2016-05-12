@@ -13,25 +13,41 @@ html, body, h1 {
 }
 
 .home_content {
-  background: url('wine_background.jpg') no-repeat center center;
+  background: url('wine_background.png') no-repeat center center;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
   background-size: cover;
   height: 100vh;
+  align-content: center;
+}
+
+.home_title {
+  width: 600px;
+  margin: auto;
+  position: relative;
+  top: 200px;
 }
 
 .home_title h1{
-  text-align: center;
-  color: white;
+  color: #421C52;
+  text-shadow: 0px 0px 20px #BDAEC6;
 }
 
 #title_amy {
   font-family: 'Fredoka One', cursive;
   font-size: 10em;
-  text-shadow: 10px 10px 10px #000;
+  text-align: left;
+  padding-left: 5px;
 }
 
 #title_wine, #title_journal {
   font-family: 'Great Vibes', cursive;
+  font-size: 5em;
+  text-align: right;
+  padding-right: 15px;
+}
+
+.navbar-inverse {
+  color: #421C52;
 }
