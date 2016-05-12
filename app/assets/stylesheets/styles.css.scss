@@ -7,61 +7,31 @@
 /* mixins, variables, etc. */
 /* #3A364F, #FFC17C, #250B28, #FEFEF6 */
 
-@mixin box_sizing {
-  -moz-box-sizing:    border-box;
-  -webkit-box-sizing: border-box;
-  box-sizing:         border-box;
+html, body, h1 {
+  padding: 0;
+  margin: 0;
 }
 
-body {
-  background: #3A364F;
-  color: #FEFEF6;
-  font-family: 'Josefin Slab', serif;
-  font-size: 1.5em;
+.home_content {
+  background: url('wine_background.jpg') no-repeat center center;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  height: 100vh;
 }
 
-h1 {
-  font-size: 5em;
+.home_title h1{
   text-align: center;
+  color: white;
 }
 
-/* FORMS */
-.form_boxes {
-  border: 3px solid #FEFEF6;
-  border-radius: 5px;
-  padding: 20px;
-  margin-top: 10px;
+#title_amy {
+  font-family: 'Fredoka One', cursive;
+  font-size: 10em;
+  text-shadow: 10px 10px 10px #000;
 }
 
-.form_field, .date_field {
-  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-  color: black;
-  width: 75%;
-  border: 0;
-  border-radius: 5px;
-  height: 2em;
-  box-shadow: inset 0px 0px 20px 0px rgba(0,0,0,0.6);
-  padding-left: 5px;
-}
-
-.form_field:hover {
-  box-shadow: inset 0px 0px 20px 0px rgba(0,0,0,0.3);
-}
-
-.text_area {
-  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-  color: black;
-  width: 100%;
-  border: 0;
-  border-radius: 5px;
-  box-shadow: inset 0px 0px 20px 0px rgba(0,0,0,0.6);
-}
-
-.submit_button {
-  color: #3A364F;
-  font-size: 2em;
-  font-weight: 800;
-  border-radius: 5px;
-  padding: 10px;
-  margin-top: 10px;
+#title_wine, #title_journal {
+  font-family: 'Great Vibes', cursive;
 }
