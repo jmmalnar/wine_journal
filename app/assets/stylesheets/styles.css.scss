@@ -13,7 +13,7 @@ html, body, h1 {
 }
 
 .home_content {
-  background: url('wine_background.png') no-repeat center center;
+  background: url('bw_wine_background.png') no-repeat center center;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
@@ -30,12 +30,12 @@ html, body, h1 {
 }
 
 .home_title h1{
-  color: #421C52;
-  text-shadow: 0px 0px 20px #BDAEC6;
+  color: #BDAEC6;
+  text-shadow: 1px 1px 1px #421C52, -1px -1px 1px #421C52;
 }
 
 #title_amy {
-  font-family: 'Fredoka One', cursive;
+  font-family: 'Lobster', cursive;
   font-size: 10em;
   text-align: left;
   padding-left: 5px;
@@ -46,8 +46,4 @@ html, body, h1 {
   font-size: 5em;
   text-align: right;
   padding-right: 15px;
-}
-
-.navbar-inverse {
-  color: #421C52;
 }
