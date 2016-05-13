@@ -12,38 +12,74 @@ html, body, h1 {
   margin: 0;
 }
 
-.home_content {
-  background: url('bw_wine_background.png') no-repeat center center;
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;
+#title {
+  position: fixed;
+  color: #00A287;
+  font-family: Lobster, cursive;
+  padding: 20px;
+  font-size: 7em;
+  text-shadow: 1px 1px 2px black;
+  z-index: 2;
+}
+
+#title:hover {
+  cursor: pointer;
+}
+
+.content {
+  background: url("bw_wine_background.png");
   background-size: cover;
+  width: 100vw;
   height: 100vh;
-  align-content: center;
 }
 
-.home_title {
-  width: 600px;
-  margin: auto;
+.pushmenu { /*this is the nav*/
+  background: #BDAEC6;
+  font-family: Lobster, cursive;
+  font-size: 3em;
+  text-align: center;
+  padding-top: 200px;
+  width: 300px;
+  height: 100%;
+  top: 0;
+  position:fixed;
+  z-index: 1;
+}
+
+.pushmenu a {
+  color: #421C52;
+  display: block; /* drops the nav vertically*/
+  font-weight: bold;
+  text-decoration: none;
+  text-shadow: 1px 1px 2px black;
+  padding: 14px;
+}
+
+.pushmenu a:hover {
+  background:#9C8AA5;
+}
+
+.pushmenu-left {
+  left: -300px;
+}
+
+.pushmenu-left.pushmenu-open {
+  left: 0;
+}
+
+.pushmenu-push {
+  overflow-x: hidden;
   position: relative;
-  top: 200px;
+  left: 0;
 }
 
-.home_title h1{
-  color: #BDAEC6;
-  text-shadow: 1px 1px 1px #421C52, -1px -1px 1px #421C52;
+.pushmenu-push-toright {
+  left: 300px;
 }
 
-#title_amy {
-  font-family: 'Lobster', cursive;
-  font-size: 10em;
-  text-align: left;
-  padding-left: 5px;
-}
-
-#title_wine, #title_journal {
-  font-family: 'Great Vibes', cursive;
-  font-size: 5em;
-  text-align: right;
-  padding-right: 15px;
+/*Transition*/
+.pushmenu, .pushmenu-push {
+  -webkit-transition: all 0.3s ease;
+  -moz-transition: all 0.3s ease;
+  transition: all 0.3s ease;
 }
