@@ -18,11 +18,14 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
 
+// Variables
+$background: #BDAEC6;
+
 html, body, h1 {
   padding: 0;
   margin: 0;
 }
 
 body {
-  background: #BDAEC6;
+  background: $background;
 }
