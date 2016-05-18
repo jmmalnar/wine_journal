@@ -23,6 +23,7 @@ $link_hover_background: #9C8AA5;
 /* END LOGO */
 
 /* MAIN CONTENT (BACKGROUND IMAGE) */
+
 .content {
   background: url("wine_barrels_background.jpg") no-repeat center center fixed;
   -webkit-background-size: cover;
@@ -36,20 +37,29 @@ $link_hover_background: #9C8AA5;
 
 /* NAVIGATION MENU */
 
-.navigation-hidden {
-
-  /* Collapsed */
-  width: 0;
-
-  overflow: hidden;
-  position: fixed;
-  top: 0;
-  left: 0;
+#main_navigation {
+  background: rgba(0, 0, 0, 0.75);
+  font-size: 3em;
+  text-align: center;
+  padding-top: 200px;
+  width: 300px;
   height: 100%;
+  top: 0;
+  position:fixed;
+  z-index: 1;
+}
+
+#main_navigation a {
+  display: block;
+}
+
+.navigation-hidden {
+  /* Collapsed */
+  left: -300px;
 }
 
 .navigation-displayed {
-  width: 300px;
+  left: 0;
 }
 
 /* END NAVIGATION MENU */
