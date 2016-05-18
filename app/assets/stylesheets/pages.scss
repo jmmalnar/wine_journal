@@ -36,7 +36,7 @@ $link_hover_background: #9C8AA5;
 
 /* NAVIGATION MENU */
 
-.navigation {
+.navigation-hidden {
 
   /* Collapsed */
   width: 0;
@@ -46,6 +46,10 @@ $link_hover_background: #9C8AA5;
   top: 0;
   left: 0;
   height: 100%;
+}
+
+.navigation-displayed {
+  width: 300px;
 }
 
 /* END NAVIGATION MENU */
