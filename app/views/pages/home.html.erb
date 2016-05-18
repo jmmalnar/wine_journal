@@ -1,27 +1,16 @@
-<% logged_in = true %>
-<% user_name = 'Amy' %>
+<div class="slidemenu-slide">
 
-<h1 id="title"><%= user_name %>'s wine journal</h1>
+  <!-- collapsed by default -->
+  <nav id="main_navigation" class="navigation">
+    <div class="menu_links">
+      <%= link_to 'my list', wines_path, class: 'menu_links' %>
+      <%= link_to 'add a wine', new_wine_path, class: 'menu_links' %>
+    </div>
+  </nav>
 
-<div class="pushmenu-push">
-
-  <% if logged_in %>
-    <nav class="pushmenu pushmenu-left">
-      <div class="menu_links">
-        <%= link_to 'my list', wines_path, class: 'menu_links' %>
-        <%= link_to 'add a wine', new_wine_path, class: 'menu_links' %>
-      </div>
-    </nav>
-  <% else %>
-    <nav class="pushmenu pushmenu-left">
-      <div class="menu_links">
-        <p>You need to login first</p>
-      </div>
-    </nav>
-  <% end %>
-
-      <div class="content">
-
+  <!-- full width by default -->
+  <div class="content">
+    <%= image_tag('logo.png', id: "title") %>
   </div>
 
 </div>
