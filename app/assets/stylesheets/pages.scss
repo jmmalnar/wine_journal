@@ -1,7 +1,9 @@
 // Color variables
 
+$menu_background: rgba(0, 249, 255, 0.5);
+
 $nav_text: white;
-$link_hover_background: rgba(255,204,153,0.75);
+$link_hover_background: rgba(255, 113, 25, 0.75);
 
 
 
@@ -41,7 +43,7 @@ $link_hover_background: rgba(255,204,153,0.75);
 }
 
 .navigation {
-  background: rgba(0, 0, 0, 0.75);
+  background: $menu_background;
   color: $nav_text;
   font-weight: bold;
   text-align: center;
@@ -63,17 +65,19 @@ $link_hover_background: rgba(255,204,153,0.75);
   color: $nav_text;
   display: block; /* drops the nav vertically*/
   text-decoration: none;
-  text-shadow: 1px 1px 2px black;
-  padding: 0 30px;
+  padding-top: 20px;
+  padding-bottom: 20px;
 }
 
 .navigation a:hover {
-  color: $link_hover_background;
+  color: $nav_text;
   //background: $link_hover_background;
   text-decoration: none;
 }
 
 .navigation .menu_links hr {
+  margin-top: 0;
+  margin-bottom: 0;
   width: 50%;
 }
 
