@@ -60,6 +60,7 @@ $link_hover_background: #9C8AA5;
 
 .navigation-displayed {
   left: 0;
+  transition: width 0.3s ease;
 }
 
 /* END NAVIGATION MENU */

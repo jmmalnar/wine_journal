@@ -3,12 +3,11 @@
 // You can use CoffeeScript in this file: http://coffeescript.org/
 
 $(document).ready(function() {
-    $menuLeft = $('.pushmenu-left');
+    $menuLeft = $('.navigation-hidden');
     $title = $('#title');
 
     $title.click(function() {
         $(this).toggleClass('active');
-        $('.pushmenu-push').toggleClass('pushmenu-push-toright');
-        $menuLeft.toggleClass('pushmenu-open');
+        $menuLeft.toggleClass('navigation-displayed');
     });
 });
