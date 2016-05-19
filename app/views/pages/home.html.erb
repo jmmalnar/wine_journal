@@ -1,10 +1,14 @@
 <div class="slidemenu-slide">
 
   <!-- collapsed by default -->
-  <nav id="main_navigation" class="navigation navigation-hidden">
+  <nav class="navigation navigation-hidden">
     <div class="menu_links">
-      <%= link_to 'my list', wines_path, class: 'menu_links' %>
-      <%= link_to 'add a wine', new_wine_path, class: 'menu_links' %>
+      <%= link_to wines_path, class: 'menu_links' do %>
+          <%= content_tag(:span, "", class: "glyphicon glyphicon-list")%><span>MY LIST</span>
+      <% end %>
+      <%= link_to new_wine_path, class: 'menu_links' do %>
+          <%= content_tag(:span, "", class: "glyphicon glyphicon-glass")%><span>ADD A WINE</span>
+      <% end %>
     </div>
   </nav>
 
