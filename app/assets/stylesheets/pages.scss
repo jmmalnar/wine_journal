@@ -42,6 +42,9 @@ $link_hover_background: rgba(255,204,153,0.75);
 
 .navigation {
   background: rgba(0, 0, 0, 0.75);
+  color: $nav_text;
+  font-weight: bold;
+  text-align: center;
   font-size: 30px;
   width: 300px;
   height: 100%;
@@ -50,27 +53,28 @@ $link_hover_background: rgba(255,204,153,0.75);
   z-index: 1;
 }
 
+.navigation h2 {
+  font-family: 'Lobster', cursive;
+  font-size: 3em;
+}
+
 .navigation a {
   width: 300px;
-  height: 50vh;
   color: $nav_text;
   display: block; /* drops the nav vertically*/
-  font-weight: bold;
-  text-align: center;
-  line-height: 50vh;
   text-decoration: none;
   text-shadow: 1px 1px 2px black;
   padding: 0 30px;
-}
-
-.navigation a:nth-child(1) {
-  border-bottom: 1px solid beige;
 }
 
 .navigation a:hover {
   color: $link_hover_background;
   //background: $link_hover_background;
   text-decoration: none;
+}
+
+.navigation .menu_links hr {
+  width: 50%;
 }
 
 .navigation-hidden {
