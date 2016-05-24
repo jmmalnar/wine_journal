@@ -3,49 +3,32 @@
 <p id="notice"><%= notice %></p>
 
 <div class="page_title">
-  <h1>Listing Wines</h1>
+  <h1>My Wines</h1>
 </div>
 
-<table>
-  <thead>
+<div class="container">
+  <table class="table">
+    <thead>
     <tr>
+      <th>Rating</th>
       <th>Name</th>
       <th>Vintage</th>
       <th>Grapes</th>
       <th>Color</th>
-      <th>Country</th>
-      <th>Region</th>
-      <th>Abv</th>
-      <th>Vineyard</th>
-      <th>Price</th>
-      <th>Date drank</th>
-      <th>Notes</th>
-      <th colspan="3"></th>
     </tr>
-  </thead>
+    </thead>
 
-  <tbody>
-    <% @wines.each do |wine| %>
-      <tr>
-        <td><%= wine.name %></td>
-        <td><%= wine.vintage %></td>
-        <td><%= wine.grapes %></td>
-        <td><%= wine.color %></td>
-        <td><%= wine.country %></td>
-        <td><%= wine.region %></td>
-        <td><%= wine.abv %></td>
-        <td><%= wine.vineyard %></td>
-        <td><%= wine.price %></td>
-        <td><%= wine.date_drank %></td>
-        <td><%= wine.notes %></td>
-        <td><%= link_to 'Show', wine %></td>
-        <td><%= link_to 'Edit', edit_wine_path(wine) %></td>
-        <td><%= link_to 'Destroy', wine, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
+    <tbody>
+    <% sorted_wines = @wines.order(rating: :desc) %>
+    <% sorted_wines.each do |wine| %>
+        <tr>
+          <td><%= wine.rating %></td>
+          <td><%= link_to "#{wine.name}", wine %></td>
+          <td><%= wine.vintage %></td>
+          <td><%= wine.grapes %></td>
+          <td><%= wine.color %></td>
+        </tr>
     <% end %>
-  </tbody>
-</table>
-
-<br>
-
-<%= link_to 'New Wine', new_wine_path %>
+    </tbody>
+  </table>
+</div>
