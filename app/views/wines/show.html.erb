@@ -1,59 +1,45 @@
+<%= render 'navbar' %>
+
 <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Name:</strong>
-  <%= @wine.name %>
-</p>
+<div class="container">
+  <div class="row top">
+    <div class="col-lg-12">
+      <h1><%= @wine.name %></h1>
+    </div>
+  </div>
+  <div class="row middle">
+    <div class="col-lg-3">
+      <img src="http://placehold.it/168x168">
+    </div>
+    <div class="col-lg-9">
+      <ul class="list-group">
+        <li class="list-group-item"><%= @wine.vintage %></li>
+        <li class="list-group-item"><%= @wine.grapes %></li>
+        <li class="list-group-item"><%= @wine.color %></li>
+        <li class="list-group-item"><%= @wine.rating %></li>
+      </ul>
+    </div>
+  </div>
 
-<p>
-  <strong>Vintage:</strong>
-  <%= @wine.vintage %>
-</p>
-
-<p>
-  <strong>Grapes:</strong>
-  <%= @wine.grapes %>
-</p>
-
-<p>
-  <strong>Color:</strong>
-  <%= @wine.color %>
-</p>
-
-<p>
-  <strong>Country:</strong>
-  <%= @wine.country %>
-</p>
-
-<p>
-  <strong>Region:</strong>
-  <%= @wine.region %>
-</p>
-
-<p>
-  <strong>Abv:</strong>
-  <%= @wine.abv %>
-</p>
-
-<p>
-  <strong>Vineyard:</strong>
-  <%= @wine.vineyard %>
-</p>
-
-<p>
-  <strong>Price:</strong>
-  <%= @wine.price %>
-</p>
-
-<p>
-  <strong>Date drank:</strong>
-  <%= @wine.date_drank %>
-</p>
-
-<p>
-  <strong>Notes:</strong>
-  <%= @wine.notes %>
-</p>
+  <div class="row bottom">
+    <div class="col-lg-6">
+      <ul class="list-group">
+        <li class="list-group-item"><span class="showing_label">Vineyard:</span> <%= @wine.vineyard %></li>
+        <li class="list-group-item"><span class="showing_label">ABV%:</span> <%= @wine.abv %></li>
+        <li class="list-group-item"><span class="showing_label">Country:</span> <%= @wine.country %></li>
+        <li class="list-group-item"><span class="showing_label">Region:</span> <%= @wine.region %></li>
+      </ul>
+    </div>
+    <div class="col-lg-6">
+      <ul class="list-group">
+        <li class="list-group-item"><span class="showing_label">Price:</span> $<%= @wine.price %></li>
+        <li class="list-group-item"><span class="showing_label">Date drank:</span> <%= @wine.date_drank %></li>
+        <li id="wine_notes" class="list-group-item"><span class="showing_label">My notes:</span><br/><%= @wine.notes %></li>
+      </ul>
+    </div>
+  </div>
+</div>
 
 <%= link_to 'Edit', edit_wine_path(@wine) %> |
 <%= link_to 'Back', wines_path %>
