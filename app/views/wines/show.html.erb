@@ -3,13 +3,15 @@
 <p id="notice"><%= notice %></p>
 
 <div class="container show_wine_page">
-  <div class="row">
+  <div class="row bottom_buffer">
     <div id="wine_image" class="col-md-3">
-      <img src="http://placehold.it/150x150">
+      <img src="http://placehold.it/180x180">
     </div>
     <div class="col-md-9">
       <h1><%= @wine.name %></h1>
-      <h2><%= @wine.vintage %> - <%= @wine.vineyard %> <span class="glyphicon glyphicon-glass" style="color: <%= @wine.color %>"></span></h2>
+      <h3><%= @wine.vineyard %></h3>
+      <h3><%= @wine.vintage %></h3>
+      <h3><span class="glyphicon glyphicon-glass" style="color: <%= @wine.color %>"></span></h3>
     </div>
   </div>
   <div class="row">
