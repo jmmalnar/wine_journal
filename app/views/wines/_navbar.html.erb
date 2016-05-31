@@ -34,6 +34,13 @@
                   <%= content_tag(:span, '(current)', class: 'sr-only') %>
               <% end %>
             </li>
+        <% elsif params[:action] == 'show' %>
+            <li>
+              <%= link_to 'my wine list', wines_path %>
+            </li>
+            <li>
+              <%= link_to 'add new wine', new_wine_path %>
+            </li>
         <% end %>
       </ul>
       <form class="navbar-form navbar-right" role="search">

@@ -8,10 +8,22 @@
       <img src="http://placehold.it/180x180">
     </div>
     <div class="col-md-9">
-      <h1><%= @wine.name %></h1>
+      <h1>
+        <%= @wine.name %>
+        <%= link_to edit_wine_path(@wine), id: "edit_link", :title => "edit" do %>
+          <span class="glyphicon glyphicon-pencil" style="font-size: 14px;"></span>
+        <% end %>
+      </h1>
       <h3><%= @wine.vineyard %></h3>
       <h3><%= @wine.vintage %></h3>
       <h3><span class="glyphicon glyphicon-glass" style="color: <%= @wine.color %>"></span></h3>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-xs-6">
+      <ul class="list-group">
+        <li class="list-group-item"><%= @wine.rating %></li>
+      </ul>
     </div>
   </div>
   <div class="row">
@@ -38,6 +50,3 @@
     </div>
   </div>
 </div>
-
-<%= link_to 'Edit', edit_wine_path(@wine) %> |
-<%= link_to 'Back', wines_path %>
