@@ -19,14 +19,14 @@
       <h3><span class="glyphicon glyphicon-glass" style="color: <%= @wine.color %>"></span></h3>
     </div>
   </div>
-  <div class="row">
+  <div class="row normal_row">
     <div class="col-xs-6">
       <ul class="list-group">
         <li class="list-group-item"><%= @wine.rating %></li>
       </ul>
     </div>
   </div>
-  <div class="row">
+  <div class="row normal_row">
     <div class="col-md-6">
       <ul class="list-group">
         <li class="list-group-item"><%= @wine.grapes %></li>
@@ -45,7 +45,7 @@
   <div class="row">
     <div class="col-md-12">
       <ul class="list-group">
-        <li class="list-group-item"><span class="showing_label">my notes:</span><br><%= @wine.notes %></li>
+        <li id="wine_notes" class="list-group-item"><span class="showing_label">my notes:</span><br><%= @wine.notes %></li>
       </ul>
     </div>
   </div>
