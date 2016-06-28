@@ -18,8 +18,10 @@
       <h3><%= @wine.vintage %></h3>
       <% if @wine.color == 'White' or @wine.color == 'white' %>
         <h3><span class="glyphicon glyphicon-glass" style="color: yellow;" title="white wine"></span></h3>
-      <% else %>
-        <h3><span class="glyphicon glyphicon-glass" style="color: <%= @wine.color %>" title="<%= @wine.color %> wine"></span></h3>
+      <% elsif @wine.color == 'Red' or @wine.color == 'red' %>
+        <h3><span class="glyphicon glyphicon-glass" style="color: red;" title="red wine"></span></h3>
+      <% elsif @wine.color == 'Rose' or @wine.color == 'rose' %>
+        <h3><span class="glyphicon glyphicon-glass" style="color: hotpink;" title="rose"></span></h3>
       <% end %>
     </div>
   </div>
