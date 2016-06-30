@@ -19,8 +19,7 @@
     </thead>
 
     <tbody>
-    <% sorted_wines = @wines.order(rating: :desc) %>
-    <% sorted_wines.each do |wine| %>
+    <% @wines.each do |wine| %>
         <tr>
           <td><%= wine.rating %></td>
           <td><%= link_to "#{wine.name}", wine %></td>

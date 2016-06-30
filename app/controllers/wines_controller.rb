@@ -5,6 +5,11 @@ class WinesController < ApplicationController
   # GET /wines.json
   def index
     @wines = Wine.all
+    if params[:search]
+      @wines = Wine.search(params[:search]).order(rating: :desc)
+    else
+      @wines = Wine.all.order(rating: :desc)
+    end
   end
 
   # GET /wines/1
