@@ -4,6 +4,7 @@
 
 .page_title {
   text-align: center;
+  margin-bottom: 30px;
 }
 
 /* SHOW WINE PAGE */
@@ -34,12 +35,24 @@ li.list-group-item {
 
 /* FORM FOR ADD WINE EDIT WINE PAGES */
 
-label {
-  width: 100px;
+.form-control.form_field {
+  width: 40%;
 }
-
-.text_area {
-  width: 33vw;
-}
-
 /* END FORM FOR ADD WINE EDIT WINE PAGES */
+
+
+/* Small devices (tablets, 768px and up) */
+@media (max-width: 767px) {
+
+  #wine_form {
+    margin-left: 20px;
+  }
+
+  .form_label {
+    margin-right: 10px;
+  }
+
+  .form-control.form_field {
+    width: 100%;
+  }
+}
