@@ -1,0 +1,48 @@
+<% provide(:title, 'Sign up') %>
+<div id="signup_title" class="page_title">
+  <h1>Sign Up</h1>
+</div>
+
+<%= form_for(@user, :html => {:class => "form-horizontal", :id => 'user_form'}) do |f| %>
+
+    <div class="col-xs-12">
+      <%= render 'shared/error_messages', object: @user %>
+    </div>
+
+    <div class="form-group">
+      <%= f.label 'First name', class: 'col-xs-2 control-label form_label' %>
+      <div class="col-xs-8">
+        <%= f.text_field :firstname, :class => 'form-control form_field', :placeholder => 'first name' %>
+      </div>
+    </div>
+    <div class="form-group">
+      <%= f.label 'Last name', class: 'col-xs-2 control-label form_label' %>
+      <div class="col-xs-8">
+        <%= f.text_field :lastname, :class => 'form-control form_field', :placeholder => 'last name' %>
+      </div>
+    </div>
+    <div class="form-group">
+      <%= f.label :email, class: 'col-xs-2 control-label form_label' %>
+      <div class="col-xs-8">
+        <%= f.text_field :email, :class => 'form-control form_field', :placeholder => 'email address' %>
+      </div>
+    </div>
+    <div class="form-group">
+      <%= f.label :password, class: 'col-xs-2 control-label form_label' %>
+      <div class="col-xs-8">
+        <%= f.password_field :password, :class => 'form-control form_field', :placeholder => 'password' %>
+      </div>
+    </div>
+    <div class="form-group">
+      <%= f.label :password_confirmation, class: 'col-xs-2 control-label form_label' %>
+      <div class="col-xs-8">
+        <%= f.password_field :password_confirmation, :class => 'form-control form_field', :placeholder => 're-enter your password' %>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <div class="col-xs-offset-2 col-xs-10">
+        <%= f.submit "Create my account", class: 'submit_button btn btn-default' %>
+      </div>
+    </div>
+<% end %>

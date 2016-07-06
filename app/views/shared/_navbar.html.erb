@@ -36,7 +36,7 @@
                   <%= content_tag(:span, '(current)', class: 'sr-only') %>
               <% end %>
             </li>
-        <% elsif params[:action] == 'show' or params[:action] == 'edit' %>
+        <% else %>
             <li>
               <%= link_to 'my wine list', wines_path %>
             </li>
