@@ -6,7 +6,7 @@ class WinesControllerTest < ActionController::TestCase
   end
 
   test "should get home" do
-    get :home
+    get :index
     assert_response :success
     assert_not_nil assigns(:wines)
   end
