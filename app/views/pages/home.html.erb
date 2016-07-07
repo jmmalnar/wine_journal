@@ -5,17 +5,20 @@
     <div class="menu_links">
       <h2>Drink Wine</h2>
       <hr>
-      <%= link_to wines_path, class: 'menu_links' do %>
-          <%= content_tag(:span, "", class: "glyphicon glyphicon-list")%><span>MY LIST</span>
+      <% if logged_in? %>
+          <%= link_to wines_path, class: 'menu_links' do %>
+              <%= content_tag(:span, "", class: "glyphicon glyphicon-list")%><span>MY LIST</span>
+          <% end %>
+          <hr>
+          <%= link_to new_wine_path, class: 'menu_links' do %>
+              <%= content_tag(:span, "", class: "glyphicon glyphicon-glass")%><span>ADD A WINE</span>
+          <% end %>
+          <hr>
+      <% else %>
+          <%= link_to "Sign up now", signup_path %>
+          <hr>
+          <%= link_to "Login", login_path %>
       <% end %>
-      <hr>
-      <%= link_to new_wine_path, class: 'menu_links' do %>
-          <%= content_tag(:span, "", class: "glyphicon glyphicon-glass")%><span>ADD A WINE</span>
-      <% end %>
-      <hr>
-      <%= link_to "Sign up now", signup_path %>
-      <hr>
-      <%= link_to "Login", login_path %>
     </div>
   </nav>
 
