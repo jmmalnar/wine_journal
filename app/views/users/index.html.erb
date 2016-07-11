@@ -1,0 +1,26 @@
+<% provide(:title, 'All users') %>
+<%= render '/shared/navbar' %>
+
+<div class="page_title">
+  <h1>All Users</h1>
+</div>
+
+<div class="container">
+  <table class="table">
+    <thead>
+    <tr>
+      <th>Name</th>
+      <th>Created at</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    <% @users.each do |user| %>
+        <tr>
+          <td><%= link_to "#{user.firstname} #{user.lastname}", user %></td>
+          <td><%= user.created_at %></td>
+        </tr>
+    <% end %>
+    </tbody>
+  </table>
+</div>
