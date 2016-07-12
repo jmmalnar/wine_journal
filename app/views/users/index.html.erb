@@ -1,5 +1,6 @@
 <% provide(:title, 'All users') %>
 <%= render '/shared/navbar' %>
+<%= render '/shared/alerts' %>
 
 <div class="page_title">
   <h1>All Users</h1>
@@ -15,6 +16,9 @@
     <tr>
       <th>Name</th>
       <th>Created at</th>
+      <% if current_user.admin? %>
+          <th>Delete user</th>
+      <% end %>
     </tr>
     </thead>
 
@@ -23,6 +27,9 @@
         <tr>
           <td><%= link_to "#{user.firstname} #{user.lastname}", user %></td>
           <td><%= user.created_at %></td>
+          <% if current_user.admin? && !current_user?(user) %>
+            <td><%= link_to "delete", user, method: :delete, data: { confirm: "You sure?" } %></td>
+          <% end %>
         </tr>
     <% end %>
     </tbody>
