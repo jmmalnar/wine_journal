@@ -6,6 +6,20 @@
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
+User.delete_all
+Wine.delete_all
+
+User.create!(
+    firstname: 'Jason',
+    lastname: 'Malnar',
+    email: 'jmmalnar@utexas.edu',
+    password: 'password',
+    password_confirmation: 'password',
+    admin: true,
+    activated: true,
+    activated_at: Time.zone.now
+)
+
 User.create!(
     firstname: 'Example',
     lastname: 'User',
@@ -30,5 +44,42 @@ User.create!(
       password_confirmation: password,
       activated: true,
       activated_at: Time.zone.now
+  )
+end
+
+# Wines
+50.times do |n|
+  name = Faker::Company.name
+  year = Faker::Number.between(2005, 2016)
+  grape = ['merlot', 'cabernet sauvignon', 'malbec'].sample
+  country = Faker::Address.country
+  abv = Faker::Number.decimal(1)
+  Wine.create!(
+      name: "#{name} Wine",
+      vintage: year,
+      grapes: grape,
+      color: 'red',
+      country: country,
+      region: 'Somewhere Here',
+      abv: abv,
+      vineyard: name
+  )
+end
+
+50.times do |n|
+  name = Faker::Company.name
+  year = Faker::Number.between(2005, 2016)
+  grape = ['pinot grigio', 'chardonnay', 'riesling'].sample
+  country = Faker::Address.country
+  abv = Faker::Number.decimal(1)
+  Wine.create!(
+      name: "#{name} Wine",
+      vintage: year,
+      grapes: grape,
+      color: 'white',
+      country: country,
+      region: 'Somewhere Here',
+      abv: abv,
+      vineyard: name
   )
 end

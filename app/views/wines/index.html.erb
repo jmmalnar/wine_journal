@@ -31,3 +31,27 @@
     </tbody>
   </table>
 </div>
+
+<div class="container">
+  <table class="table">
+    <thead>
+    <tr>
+      <th>Name</th>
+      <th>Vintage</th>
+      <th>Grapes</th>
+      <th>Color</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    <% @list.each do |wine| %>
+        <tr>
+          <td><%= link_to "#{wine["Name"]}", "#{wine["Url"]}" %></td>
+          <td><%= wine["Vintage"] %></td>
+          <td><%= wine["Varietal"]["Name"] %></td>
+          <td><%= wine["Varietal"]["WineType"]["Name"] %></td>
+        </tr>
+    <% end %>
+    </tbody>
+  </table>
+</div>

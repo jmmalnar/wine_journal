@@ -10,6 +10,7 @@ class WinesController < ApplicationController
     else
       @wines = Wine.all.order(rating: :desc)
     end
+    @list = Wine.for('14+hand+red')
   end
 
   # GET /wines/1
