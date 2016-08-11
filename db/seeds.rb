@@ -47,13 +47,19 @@ User.create!(
   )
 end
 
+user = User.find_by_email('jmmalnar@utexas.edu')
+
 # Wines
-50.times do |n|
+10.times do |n|
   name = Faker::Company.name
   year = Faker::Number.between(2005, 2016)
   grape = ['merlot', 'cabernet sauvignon', 'malbec'].sample
   country = Faker::Address.country
   abv = Faker::Number.decimal(1)
+  price = Faker::Commerce.price
+  date = Faker::Date.between(2.years.ago, Date.today)
+  note = Faker::Lorem.paragraph
+  rating = Faker::Number.between(1,10)
   Wine.create!(
       name: "#{name} Wine",
       vintage: year,
@@ -62,16 +68,25 @@ end
       country: country,
       region: 'Somewhere Here',
       abv: abv,
-      vineyard: name
+      vineyard: name,
+      price: price,
+      date_drank: date,
+      notes: note,
+      rating: rating,
+      user_id: user.id
   )
 end
 
-50.times do |n|
+10.times do |n|
   name = Faker::Company.name
   year = Faker::Number.between(2005, 2016)
   grape = ['pinot grigio', 'chardonnay', 'riesling'].sample
   country = Faker::Address.country
   abv = Faker::Number.decimal(1)
+  price = Faker::Commerce.price
+  date = Faker::Date.between(2.years.ago, Date.today)
+  note = Faker::Lorem.paragraph
+  rating = Faker::Number.between(1,10)
   Wine.create!(
       name: "#{name} Wine",
       vintage: year,
@@ -80,6 +95,11 @@ end
       country: country,
       region: 'Somewhere Here',
       abv: abv,
-      vineyard: name
+      vineyard: name,
+      price: price,
+      date_drank: date,
+      notes: note,
+      rating: rating,
+      user_id: user.id
   )
 end
