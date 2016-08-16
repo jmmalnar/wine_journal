@@ -77,6 +77,10 @@ class WinesController < ApplicationController
       @wine = Wine.find(params[:id])
     end
 
+    def current_user
+      @current_user ||= User.find(session[:user_id])
+    end
+
     # Never trust parameters from the scary internet, only allow the white list through.
     def wine_params
       params.require(:wine).permit(:name, :vintage, :grapes, :color, :country, :region, :abv, :vineyard, :price, :date_drank, :notes, :rating, :user_id)
