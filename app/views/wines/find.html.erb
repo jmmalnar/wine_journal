@@ -4,16 +4,17 @@
   <h1>Search for the new wine you wish to add</h1>
 </div>
 
-<%= form_tag 'find', method: 'post', :class => 'form-horizontal' do %>
-    <div class="form-group">
-      <%= label_tag :search_new, 'Search for a wine:', :class => 'col-xs-2 control-label form_label' %>
-      <div class="col-xs-10">
+<div class="container">
+  <%= form_tag 'find', method: 'post', :class => 'form-inline' do %>
+      <div class="form-group">
+        <%= label_tag :search_new, 'Search for a wine:', :class => 'control-label form_label' %>
         <%= text_field_tag :search_new, '', class: 'form-control form_field' %>
-        <br/>
+      </div>
+      <div class="form-group">
         <%= submit_tag 'Search', class: 'btn btn-default' %>
       </div>
-    </div>
-<% end %>
+  <% end %>
+</div>
 
 <% if @list %>
     <div class="container">
@@ -35,7 +36,7 @@
                                                                        :name => "#{wine["Name"]}",
                                                                        :vintage => "#{wine["Vintage"]}",
                                                                        :vineyard => "#{wine["Vineyard"]["Name"]}",
-                                                                       :color => "#{wine["Varietal"]["WineType"]["Name"]}",
+                                                                       :color => "#{wine["Varietal"]["WineType"]["Name"].partition(" ").first}",
                                                                        :grapes => "#{wine["Varietal"]["Name"]}",
                                                                        :country => "#{wine["Appellation"]["Region"]["Name"]}",
                                                                        :region => "#{wine["Appellation"]["Name"]}"
@@ -51,5 +52,4 @@
         <p>Sorry, we could not find any wine with from your search.  Please try again.</p>
       <% end %>
     </div>
-    <%= @list[0]["Appellation"]["Name"] %> - <%= @list[0]["Appellation"]["Region"]["Name"] %>
 <% end %>

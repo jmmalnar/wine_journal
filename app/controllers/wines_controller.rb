@@ -4,11 +4,10 @@ class WinesController < ApplicationController
   # GET /wines
   # GET /wines.json
   def index
-    @wines = Wine.all
     if params[:search]
       @wines = Wine.search(params[:search]).order(rating: :desc)
     else
-      @wines = Wine.all.order(rating: :desc)
+      @wines = current_user.wines.all.order(rating: :desc)
     end
   end
 
@@ -25,7 +24,7 @@ class WinesController < ApplicationController
 
   # GET /wines/new
   def new
-    @wine = Wine.new
+    @wine = current_user.wines.new
   end
 
   # GET /wines/1/edit
@@ -35,7 +34,7 @@ class WinesController < ApplicationController
   # POST /wines
   # POST /wines.json
   def create
-    @wine = Wine.new(wine_params)
+    @wine = current_user.wines.new(wine_params)
 
     respond_to do |format|
       if @wine.save
@@ -80,6 +79,6 @@ class WinesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def wine_params
-      params.require(:wine).permit(:name, :vintage, :grapes, :color, :country, :region, :abv, :vineyard, :price, :date_drank, :notes, :rating)
+      params.require(:wine).permit(:name, :vintage, :grapes, :color, :country, :region, :abv, :vineyard, :price, :date_drank, :notes, :rating, :user_id)
     end
 end
