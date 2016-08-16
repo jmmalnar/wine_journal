@@ -1,5 +1,7 @@
 <%= form_for(@wine, :html => {:class => "form-horizontal", :id => 'wine_form'}) do |f| %>
+
   <% if @wine.errors.any? %>
+
     <div id="error_explanation">
       <h2><%= pluralize(@wine.errors.count, 'error') %> prohibited this wine from being saved:</h2>
 
@@ -9,73 +11,88 @@
       <% end %>
       </ul>
     </div>
+
   <% end %>
+
+  <% if params[:action] == 'new' %>
+
     <div class="form-group">
       <%= f.label :rating, class: 'col-xs-2 control-label form_label' %>
       <div class="col-xs-10">
         <%= f.text_field :rating, :class => 'form-control form_field', :placeholder => '1 - 10' %>
       </div>
     </div>
+
     <div class="form-group">
       <%= f.label :name, class: 'col-xs-2 control-label form_label' %>
       <div class="col-xs-10">
         <%= f.text_field :name, :value => params[:name], :class => 'form-control form_field', :placeholder => 'name' %>
       </div>
     </div>
+
     <div class="form-group">
       <%= f.label :vineyard, class: 'col-xs-2 control-label form_label' %>
       <div class="col-xs-10">
         <%= f.text_field :vineyard, :value => params[:vineyard], :class => 'form-control form_field', :placeholder => 'winery name or vineyard' %>
       </div>
     </div>
+
     <div class="form-group">
       <%= f.label :vintage, class: 'col-xs-2 control-label form_label' %>
       <div class="col-xs-10">
         <%= f.number_field :vintage, :value => params[:vintage], :class => 'form-control form_field', :placeholder => '2014' %>
       </div>
     </div>
+
     <div class="form-group">
       <%= f.label :color, class: 'col-xs-2 control-label form_label' %>
       <div class="col-xs-10">
         <%= f.text_field :color, :value => params[:color], :class => 'form-control form_field', :placeholder => 'red, white, etc...' %>
       </div>
     </div>
+
     <div class="form-group">
       <%= f.label :grapes, class: 'col-xs-2 control-label form_label' %>
       <div class="col-xs-10">
         <%= f.text_field :grapes, :value => params[:grapes], :class => 'form-control form_field', :placeholder => 'pinot grigio, merlot, etc...' %>
       </div>
     </div>
+
     <div class="form-group">
       <%= f.label 'Country / State', class: 'col-xs-2 control-label form_label' %>
       <div class="col-xs-10">
         <%= f.text_field :country, :value => params[:country], :class => 'form-control form_field', :placeholder => 'country or state' %>
       </div>
     </div>
+
     <div class="form-group">
       <%= f.label :region, class: 'col-xs-2 control-label form_label' %>
       <div class="col-xs-10">
         <%= f.text_field :region, :value => params[:region], :class => 'form-control form_field', :placeholder => 'region' %>
       </div>
     </div>
+
     <div class="form-group">
       <%= f.label :abv, class: 'col-xs-2 control-label form_label' %>
       <div class="col-xs-10">
         <%= f.text_field :abv, :class => 'form-control form_field', :placeholder => 'percent alcohol by volume' %>
       </div>
     </div>
+
     <div class="form-group">
       <%= f.label :price, class: 'col-xs-2 control-label form_label' %>
       <div class="col-xs-10">
         <%= f.text_field :price, :class => 'form-control form_field', :placeholder => 'price you paid' %>
       </div>
     </div>
+
     <div class="form-group">
       <%= f.label :date_drank, class: 'col-xs-2 control-label form_label' %>
       <div class="col-xs-10">
         <%= f.date_field :date_drank, :class => 'form-control form_field', :placeholder => 'when did you drink this?' %>
       </div>
     </div>
+
     <div class="form-group">
       <%= f.label :notes, class: 'col-xs-2 control-label form_label' %>
       <div class="col-xs-10">
@@ -88,4 +105,99 @@
         <%= f.submit :Submit, class: 'submit_button btn btn-default' %>
       </div>
     </div>
+
+  <% else %>
+
+        <div class="form-group">
+          <%= f.label :rating, class: 'col-xs-2 control-label form_label' %>
+          <div class="col-xs-10">
+            <%= f.text_field :rating, :class => 'form-control form_field', :placeholder => '1 - 10' %>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <%= f.label :name, class: 'col-xs-2 control-label form_label' %>
+          <div class="col-xs-10">
+            <%= f.text_field :name, :class => 'form-control form_field', :placeholder => 'name' %>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <%= f.label :vineyard, class: 'col-xs-2 control-label form_label' %>
+          <div class="col-xs-10">
+            <%= f.text_field :vineyard, :class => 'form-control form_field', :placeholder => 'winery name or vineyard' %>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <%= f.label :vintage, class: 'col-xs-2 control-label form_label' %>
+          <div class="col-xs-10">
+            <%= f.number_field :vintage, :class => 'form-control form_field', :placeholder => '2014' %>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <%= f.label :color, class: 'col-xs-2 control-label form_label' %>
+          <div class="col-xs-10">
+            <%= f.text_field :color, :class => 'form-control form_field', :placeholder => 'red, white, etc...' %>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <%= f.label :grapes, class: 'col-xs-2 control-label form_label' %>
+          <div class="col-xs-10">
+            <%= f.text_field :grapes, :class => 'form-control form_field', :placeholder => 'pinot grigio, merlot, etc...' %>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <%= f.label 'Country / State', class: 'col-xs-2 control-label form_label' %>
+          <div class="col-xs-10">
+            <%= f.text_field :country, :class => 'form-control form_field', :placeholder => 'country or state' %>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <%= f.label :region, class: 'col-xs-2 control-label form_label' %>
+          <div class="col-xs-10">
+            <%= f.text_field :region, :class => 'form-control form_field', :placeholder => 'region' %>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <%= f.label :abv, class: 'col-xs-2 control-label form_label' %>
+          <div class="col-xs-10">
+            <%= f.text_field :abv, :class => 'form-control form_field', :placeholder => 'percent alcohol by volume' %>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <%= f.label :price, class: 'col-xs-2 control-label form_label' %>
+          <div class="col-xs-10">
+            <%= f.text_field :price, :class => 'form-control form_field', :placeholder => 'price you paid' %>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <%= f.label :date_drank, class: 'col-xs-2 control-label form_label' %>
+          <div class="col-xs-10">
+            <%= f.date_field :date_drank, :class => 'form-control form_field', :placeholder => 'when did you drink this?' %>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <%= f.label :notes, class: 'col-xs-2 control-label form_label' %>
+          <div class="col-xs-10">
+            <%= f.text_area :notes, :class => 'form-control form_field', :placeholder => 'notes' %>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <div class="col-xs-offset-2 col-xs-10">
+            <%= f.submit :Submit, class: 'submit_button btn btn-default' %>
+          </div>
+        </div>
+
+  <% end %>
+
 <% end %>
