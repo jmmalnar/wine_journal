@@ -24,7 +24,7 @@
               <% end %>
             </li>
             <li>
-              <%= link_to 'add new wine', new_wine_path %>
+              <%= link_to 'add new wine', find_path %>
             </li>
         <% elsif params[:action] == 'new' %>
             <li>
@@ -41,7 +41,7 @@
               <%= link_to 'my wine list', wines_path %>
             </li>
             <li>
-              <%= link_to 'add new wine', new_wine_path %>
+              <%= link_to 'add new wine', find_path %>
             </li>
         <% end %>
       </ul>

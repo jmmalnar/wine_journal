@@ -17,7 +17,7 @@
 
 <% if @list %>
     <div class="container">
-      <p>Select the wine you are searching for from the list below.</p>
+      <h4>Select the wine you are searching for from the list below to save your wine journal entry.</h4>
       <table class="table">
         <thead>
         <tr>
@@ -31,7 +31,15 @@
         <tbody>
         <% @list.each do |wine| %>
             <tr>
-              <td><%= link_to "#{wine["Name"]}", "#{wine["Url"]}" %></td>
+              <td><%= link_to "#{wine["Name"]}", new_wine_path({
+                                                                       :name => "#{wine["Name"]}",
+                                                                       :vintage => "#{wine["Vintage"]}",
+                                                                       :vineyard => "#{wine["Vineyard"]["Name"]}",
+                                                                       :color => "#{wine["Varietal"]["WineType"]["Name"]}",
+                                                                       :grapes => "#{wine["Varietal"]["Name"]}",
+                                                                       :country => "#{wine["Appellation"]["Region"]["Name"]}",
+                                                                       :region => "#{wine["Appellation"]["Name"]}"
+                                                               }) %></td>
               <td><%= wine["Vintage"] %></td>
               <td><%= wine["Varietal"]["Name"] %></td>
               <td><%= wine["Varietal"]["WineType"]["Name"] %></td>
@@ -43,4 +51,5 @@
         <p>Sorry, we could not find any wine with from your search.  Please try again.</p>
       <% end %>
     </div>
+    <%= @list[0]["Appellation"]["Name"] %> - <%= @list[0]["Appellation"]["Region"]["Name"] %>
 <% end %>
