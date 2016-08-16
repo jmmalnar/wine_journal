@@ -10,7 +10,12 @@ class WinesController < ApplicationController
     else
       @wines = Wine.all.order(rating: :desc)
     end
-    @list = Wine.for('14+hand+red')
+  end
+
+  def find
+    if params[:search_new]
+      @list = Wine.for(params[:search_new])
+    end
   end
 
   # GET /wines/1

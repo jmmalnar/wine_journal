@@ -1,0 +1,46 @@
+<%= render '/shared/navbar' %>
+
+<div class="page_title">
+  <h1>Search for the new wine you wish to add</h1>
+</div>
+
+<%= form_tag 'find', method: 'post', :class => 'form-horizontal' do %>
+    <div class="form-group">
+      <%= label_tag :search_new, 'Search for a wine:', :class => 'col-xs-2 control-label form_label' %>
+      <div class="col-xs-10">
+        <%= text_field_tag :search_new, '', class: 'form-control form_field' %>
+        <br/>
+        <%= submit_tag 'Search', class: 'btn btn-default' %>
+      </div>
+    </div>
+<% end %>
+
+<% if @list %>
+    <div class="container">
+      <p>Select the wine you are searching for from the list below.</p>
+      <table class="table">
+        <thead>
+        <tr>
+          <th>Name</th>
+          <th>Vintage</th>
+          <th>Grapes</th>
+          <th>Color</th>
+        </tr>
+        </thead>
+
+        <tbody>
+        <% @list.each do |wine| %>
+            <tr>
+              <td><%= link_to "#{wine["Name"]}", "#{wine["Url"]}" %></td>
+              <td><%= wine["Vintage"] %></td>
+              <td><%= wine["Varietal"]["Name"] %></td>
+              <td><%= wine["Varietal"]["WineType"]["Name"] %></td>
+            </tr>
+        <% end %>
+        </tbody>
+      </table>
+      <% if @list.length == 0 %>
+        <p>Sorry, we could not find any wine with from your search.  Please try again.</p>
+      <% end %>
+    </div>
+<% end %>
