@@ -8,8 +8,11 @@
       <div class="account-wall">
         <h1 class="text-center login-title">Sign in to continue to Amy's Wine Journal</h1>
         <%= form_for(:session, url: login_path, :html => {:class => "form-signin", :id => 'login_form'}) do |f| %>
+            <br/>
             <%= f.text_field :email, :class => 'form-control', :type => 'text', :placeholder => 'Email', :autofocus=>true %>
-            <%= f.password_field :password, :class => 'form-control', :type => 'text', :placeholder => 'Password' %>
+            <br/>
+            <%= f.password_field :password, :class => 'form-control', :type => 'password', :placeholder => 'Password' %>
+            <br/>
             <%= f.submit 'Sign in', class: 'btn btn-lg btn-primary btn-block', :type => 'submit' %>
             <%= f.label :remember_me, class: 'checkbox pull-left' do %>
                 <%= f.check_box :remember_me %>

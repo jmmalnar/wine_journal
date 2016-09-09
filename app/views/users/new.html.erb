@@ -1,8 +1,5 @@
 <% provide(:title, 'Sign up') %>
 <% provide(:button_text, 'Create my account') %>
+<% provide(:header_text, "Create a new account for Amy's Wine Journal") %>
 
-<div class="page_title no_navbar_title">
-  <h1>Sign Up</h1>
-</div>
-
-<%= render 'form' %>
+<%= render 'form', new_user_form: true %>

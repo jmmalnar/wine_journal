@@ -1,43 +1,25 @@
-<%= form_for(@user, :html => {:class => "form-horizontal", :id => 'user_form'}) do |f| %>
-
-    <div class="col-xs-12">
-      <%= render 'shared/error_messages', object: @user %>
-    </div>
-
-    <div class="form-group">
-      <%= f.label 'First name', class: 'col-xs-2 control-label form_label' %>
-      <div class="col-xs-8">
-        <%= f.text_field :firstname, :class => 'form-control form_field', :placeholder => 'first name' %>
+<div class="container" id="login_page_content">
+  <div class="row">
+    <div class="col-sm-6 col-md-4 col-md-offset-4">
+      <div class="account-wall">
+        <h1 class="text-center login-title"><%= yield(:header_text) %></h1>
+        <%= form_for(@user, :html => {:class => "form-signin", :id => 'user_form'}) do |f| %>
+            <%= f.text_field :firstname, :class => 'form-control', :type => 'text', :placeholder => 'First name', :autofocus=>true %>
+            <br/>
+            <%= f.text_field :lastname, :class => 'form-control', :type => 'text', :placeholder => 'Last name' %>
+            <br/>
+            <%= f.email_field :email, :class => 'form-control', :type => 'text', :placeholder => 'Email address' %>
+            <br/>
+            <%= f.password_field :password, :class => 'form-control', :type => 'password', :placeholder => 'Password' %>
+            <br/>
+            <%= f.password_field :password_confirmation, :class => 'form-control', :type => 'password', :placeholder => 'Re-enter your Password' %>
+            <br/>
+            <%= f.submit yield(:button_text), class: 'btn btn-lg btn-primary btn-block', :type => 'submit' %>
+            <% if local_assigns[:new_user_form] %>
+                <%= link_to 'Already have an account? Sign in', login_path, :class => 'text-center new-account' %>
+            <% end %>
+      <% end %>
       </div>
     </div>
-    <div class="form-group">
-      <%= f.label 'Last name', class: 'col-xs-2 control-label form_label' %>
-      <div class="col-xs-8">
-        <%= f.text_field :lastname, :class => 'form-control form_field', :placeholder => 'last name' %>
-      </div>
-    </div>
-    <div class="form-group">
-      <%= f.label :email, class: 'col-xs-2 control-label form_label' %>
-      <div class="col-xs-8">
-        <%= f.text_field :email, :class => 'form-control form_field', :placeholder => 'email address' %>
-      </div>
-    </div>
-    <div class="form-group">
-      <%= f.label :password, class: 'col-xs-2 control-label form_label' %>
-      <div class="col-xs-8">
-        <%= f.password_field :password, :class => 'form-control form_field', :placeholder => 'password' %>
-      </div>
-    </div>
-    <div class="form-group">
-      <%= f.label :password_confirmation, class: 'col-xs-2 control-label form_label' %>
-      <div class="col-xs-8">
-        <%= f.password_field :password_confirmation, :class => 'form-control form_field', :placeholder => 're-enter your password' %>
-      </div>
-    </div>
-
-    <div class="form-group">
-      <div class="col-xs-offset-2 col-xs-10">
-        <%= f.submit yield(:button_text), class: 'submit_button btn btn-default' %>
-      </div>
-    </div>
-<% end %>
+  </div>
+</div>
