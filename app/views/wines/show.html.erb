@@ -28,7 +28,7 @@
   <div class="row normal_row">
     <div class="col-xs-6">
       <ul class="list-group">
-        <li class="list-group-item"><%= @wine.rating %></li>
+        <li class="list-group-item"><meter min="0" max="10" low="3" high="7" optimum="7.5" value="<%= @wine.rating %>"></meter> <%= @wine.rating %></li>
       </ul>
     </div>
   </div>

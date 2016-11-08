@@ -21,7 +21,7 @@
     <tbody>
     <% @wines.each do |wine| %>
         <tr>
-          <td><%= wine.rating %></td>
+          <td><meter min="0" max="10" low="3" high="7" optimum="7.5" value="<%= wine.rating %>"></meter> <%= wine.rating %></td>
           <td><%= link_to "#{wine.name}", wine %></td>
           <td><%= wine.vintage %></td>
           <td><%= wine.grapes %></td>
